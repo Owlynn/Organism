@@ -18,8 +18,13 @@ const pAequorFactory = (number, baseArray) => {
       specimenNum : number,
       dna : baseArray,
       mutate () {
-        this.dna = this.dna[Math.floor(Math.random() * 15)];
+        this.dna = returnRandBase()
+        if (this.dna=['A', 'T', 'C', 'G']) {
+          this.dna = returnRandBase()
+        }
         return this.dna
+        }
+        
       }
     }
   };
