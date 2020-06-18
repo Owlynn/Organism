@@ -10,8 +10,23 @@ const mockUpStrand = () => {
   for (let i = 0; i < 15; i++) {
     newStrand.push(returnRandBase());
   }
-  return newStrand;
+    return newStrand;
 };
+
+const pAequorFactory = (number, baseArray) => {
+    return {
+      specimenNum : number,
+      dna : baseArray,
+      mutate () {
+        this.dna = this.dna[Math.floor(Math.random() * 15)];
+        return this.dna
+      }
+    }
+  };
+ 
+  
+    console.log(pAequorFactory(1,mockUpStrand))
+    console.log(pAequorFactory(2,mockUpStrand))
 
 
 
